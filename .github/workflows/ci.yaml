@@ -24,3 +24,4 @@ jobs:
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker push kp3073/go-web-app:${GITHUB_SHA}
+        
