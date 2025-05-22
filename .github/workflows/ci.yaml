@@ -17,6 +17,7 @@ jobs:
     
     - name: Build the Docker image
       run: |
+        $env
         docker build -t kp3073/go-web-app:${GITHUB_SHA} .
       
     - name: Push the Docker image
