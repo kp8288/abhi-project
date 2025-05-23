@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: goweb-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: goweb-app
+  template:
+    metadata:
+      labels:
+        app: goweb-app
+    spec:
+      containers:
+      - name: goweb-app
+        image: kp3073/go-web-app:latest
+        ports:
+        - containerPort: 8080
