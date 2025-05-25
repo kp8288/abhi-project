@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: goweb-app
-        image: kp3073/go-web-app:latest
+        image: kp3073/go-web-app:3a87fc0832665a32cb68a93ca68e4695e2f77bc0
         ports:
         - containerPort: 8080
