@@ -15,14 +15,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       
-    - name: Build the Docker image
-      run: |
-        $env
-        docker buildx build --platform linux/amd64 -t kp3073/go-web-app:${GITHUB_SHA} .
-  
-  
-    - name: Push the Docker image
-      run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push kp3073/go-web-app:${GITHUB_SHA}
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Build and push (with correct platform)
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{ github.sha }}
+        platforms: linux/amd64
+
         
