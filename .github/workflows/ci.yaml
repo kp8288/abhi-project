@@ -15,9 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       
-    - name: Print all environment variables
-      run: printenv
-      
     - name: Build the Docker image
       run: |
         $env
