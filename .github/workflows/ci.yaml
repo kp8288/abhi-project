@@ -7,23 +7,14 @@ on:
     branches: ["main"]
 
 jobs:
-  
   build:
-    
     runs-on: self-hosted
-    
     steps:
-    - uses: actions/checkout@v4
-      
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-    
-    - name: Build and push (with correct platform)
+    - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{ github.sha }}
+        tags: kp3073/go-web-app:${{ github.sha }}
         platforms: linux/amd64
-
         
