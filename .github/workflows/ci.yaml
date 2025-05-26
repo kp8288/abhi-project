@@ -18,9 +18,7 @@ jobs:
     - name: Build the Docker image
       run: |
         $env
-        docker buildx build \
-        --platform linux/amd64 \
-        -t kp3073/go-web-app:${GITHUB_SHA} . 
+        docker buildx build --platform linux/amd64 -t kp3073/go-web-app:${GITHUB_SHA} .
   
   
     - name: Push the Docker image
