@@ -18,7 +18,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: goweb-app
-        image: kp3073/go-web-app:c324b81ab36e8eafc30b24ed651aad8e5647313b
+        image: kp3073/go-web-app:6e01d3b90eb0fd032abd971c58c73dcab699b23b
         ports:
         - containerPort: 8080
 
