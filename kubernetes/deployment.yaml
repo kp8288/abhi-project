@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: app-deployment
   labels:
-    app: goweb-app
+    app: go-web-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: goweb-app
+      app: go-web-app
   template:
     metadata:
       labels:
-        app: goweb-app
+        app: go-web-app
     spec:
       imagePullSecrets:
       - name: dockerhub-secret
