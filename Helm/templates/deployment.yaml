@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: {{.Values.app}}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{.Values.app}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.app}}
+    spec:
+      imagePullSecrets:
+      - name: dockerhub-secret
+      containers:
+      - name: {{.Values.app}}
+        image: kp3073/go-web-app:6e01d3b90eb0fd032abd971c58c73dcab699b23b
+        ports:
+        - containerPort: {{.Values.port.containerPort}}

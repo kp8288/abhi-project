@@ -1,0 +1,4 @@
+app: go-web-app
+
+ports:
+- containerPort: 8080
