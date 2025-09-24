@@ -1,5 +1,5 @@
 # Containerize the go application that we have created
-# This is the Dockerfile that we will use to build the image
+# This is the docker-compose.yml that we will use to build the image
 # and run the container
 
 # Start with a base image
